@@ -19,13 +19,14 @@ typedef unsigned short t_mode;
 #define t_size	long int
 
 /* open-only flags */
-#define	O_RDONLY	0x0000		/* open for reading only */
-#define	O_WRONLY	0x0001		/* open for writing only */
-#define	O_RDWR		0x0002		/* open for reading and writing */
-#define	O_APPEND	0x0008		/* set append mode */
-#define	O_CREAT		0x0200		/* create if nonexistant */
-#define	O_TRUNC		0x0400		/* truncate to zero length */
-#define	O_EXCL		0x0800		/* error if already exists */
+#define O_RDONLY	     00
+#define O_WRONLY	     01
+#define O_RDWR		     02
+
+#define O_APPEND	02000		
+#define O_CREAT		0100
+#define	O_TRUNC	  	01000		/* truncate to zero length */
+#define	O_EXCL		0200		/* error if already exists */
 
 #define	S_IRWXU	0000700			/* RWX mask for owner */
 #define	S_IRUSR	0000400			/* R for owner */
@@ -43,10 +44,16 @@ typedef unsigned short t_mode;
 #define	S_IXOTH	0000001			/* X for other */
 
 
-#define	PROT_READ	0x04	/* pages can be read */
-#define	PROT_WRITE	0x02	/* pages can be written */
-#define	PROT_EXEC	0x01	/* pages can be executed */
-#define	MAP_PRIVATE	0x0000	/* changes are private */
+#define PROT_READ	0x1		/* page can be read */
+#define PROT_WRITE	0x2		/* page can be written */
+#define PROT_EXEC	0x4		/* page can be executed */
+
+#define MAP_SHARED	0x01		/* Share changes */
+#define MAP_PRIVATE	0x02		/* Changes are private */
+#define MAP_TYPE	0x0f		/* Mask for type of mapping */
+#define MAP_FIXED	0x10		/* Interpret addr exactly */
+#define MAP_ANONYMOUS	0x20		/* don't use a file */
+
 
 #define NULL ( (void *) 0)
 
