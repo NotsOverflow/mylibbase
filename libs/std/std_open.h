@@ -3,20 +3,20 @@
 	Autor: Richard Juan											  ____
 	Email: Labruillere (at) gmail.com					   	   /||   /
 	website: github.com/richardjuan						  	  / ||  /
-	License: GPL v3					 						 /  || /
+	License: apache v2					 					 /  || /
 															/___||/
 	Created: 30-11-2016
-	Last edited: Wed Nov 30 20:40:53 2016
+	Last edited: 01-01-2018
 
 ------------------------------------------------------------------------------*/
 
-#ifndef	__TSL_WRITE__
-#define	__TSL_WRITE__
+#ifndef	__STD_OPEN__
+#define	__STD_OPEN__
 
-#include <stddefs.h>
-#include <stdcalls.h>
+#include <std_defs.h>
+#include <std_calls.h>
 
-ut_size
-tsl_write(int fd, void const* data, ut_size nbytes);
+int
+std_open(void const* file_path, int flags, t_mode mode);
 
 #endif
